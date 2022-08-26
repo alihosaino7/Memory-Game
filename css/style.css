@@ -1,0 +1,167 @@
+    * {
+        box-sizing: border-box;
+        margin: 0;
+    }
+    
+    body {
+        padding: 20px;
+        font-family: 'Silkscreen', cursive;
+        background-color: #333;
+    }
+    
+    i {
+        font-size: 60px;
+        display: block;
+    }
+    
+     :root {
+        --angular-color: #b52e31;
+        --js-color: #f7df1e;
+        --vue-color: #42b883;
+        --html-color: #e34f26;
+        --py-color: #56a2e0;
+        --react-color: #00d8ff;
+        --node-color: #81d679;
+    }
+    
+    .confetti {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        user-select: none;
+        z-index: 1000;
+        display: none;
+    }
+    
+    .controls-buttons {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        background-color: #2195f3bb;
+    }
+    
+    .controls-buttons span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f44336;
+        color: #fff;
+        padding: 1rem 1.5rem;
+        text-align: center;
+        font-size: 2rem;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+    
+    .controls-buttons span:hover {
+        background-color: #f44336d7;
+    }
+    
+    .fa-angular {
+        color: var(--angular-color);
+    }
+    
+    .fa-react {
+        color: var(--react-color);
+    }
+    
+    .fa-node-js {
+        color: var(--node-color);
+    }
+    
+    .fa-js {
+        color: var(--js-color);
+    }
+    
+    .fa-vuejs {
+        color: var(--vue-color);
+    }
+    
+    .fa-html5 {
+        color: var(--html-color);
+    }
+    
+    .fa-python {
+        color: var(--py-color);
+    }
+    
+    .info-container {
+        width: 95%;
+        margin: 1.2rem auto 0;
+        background-color: #f6f6f6;
+        padding: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 2px solid #2196f3;
+    }
+    
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 95%;
+        margin: 1.2rem auto;
+    }
+    
+    .container.no-clicking {
+        pointer-events: none;
+    }
+    
+    .game-block {
+        width: calc((100% - 4rem) / 5);
+        height: 160px;
+        transition: transform 500ms;
+        transform-style: preserve-3d;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .game-block.is-flipped,
+    .game-block.has-match {
+        transform: rotateY(180deg);
+        pointer-events: none;
+    }
+    
+    .game-block .face {
+        border: 5px solid #2196f3;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        text-align: center;
+        backface-visibility: hidden;
+    }
+    
+    .game-block .front {
+        background-color: #333;
+        line-height: 200px;
+        position: relative;
+    }
+    
+    .game-block .front::before {
+        content: '?';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -55%);
+        color: #fff;
+        font-size: 120px;
+        font-weight: bold;
+    }
+    
+    .game-block .back {
+        display: grid;
+        place-items: center;
+        background-color: #607d8e;
+        transform: rotateY(180deg);
+    }
